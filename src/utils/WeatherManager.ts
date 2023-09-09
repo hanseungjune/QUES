@@ -3,12 +3,20 @@ import axios from "axios";
 export default class WeatherManager {
   private lat: number;
   private lon: number;
+  private key: string;
   private URL: string;
 
   constructor() {
     this.lat = 35.871845;
     this.lon = 128.634696;
-    this.URL = `https://api.openweathermap.org/data/3.0/onecall?lat=${this.lat}&lon=${this.lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
+    this.key = "4e8f3698feb25cab1f952a79e25452af";
+    this.URL = `https://api.openweathermap.org/data/3.0/onecall?lat=${
+      this.lat
+    }&lon=${this.lon}&appid=${
+      process.env.REACT_APP_WEATHER_API_KEY
+        ? process.env.REACT_APP_WEATHER_API_KEY
+        : this.key
+    }`;
   }
 
   getLocation() {
