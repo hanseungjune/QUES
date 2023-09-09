@@ -40,6 +40,7 @@ const TodosCompo = () => {
       todos.forEach((todo) => {
         webStorage.removeTodo(todo.id);
       });
+      setSelectedId(null);
     }
   }, [todos]);
 
