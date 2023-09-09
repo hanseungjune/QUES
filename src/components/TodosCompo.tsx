@@ -7,9 +7,11 @@ import {
   TodoContentDiv,
   TodoSection,
   TodoTitle,
+  TodosSection,
 } from "../styles/TodosStyle";
 import logo from "../images/logo_ques.png";
 import useTodos from "../hooks/useTodo";
+import { styled } from "styled-components";
 
 const TodosCompo = () => {
   const {
@@ -50,44 +52,48 @@ const TodosCompo = () => {
         <span>QuesDiary</span>
         <img src={logo} alt="logo" />
       </TodoTitle>
-      {todos.map((todo, index) => (
-        <TodoSection key={todo.id}>
-          <TodoContentDiv
-            style={
-              selectedId === todo.id
-                ? {
-                    border: "3px solid green",
-                    color: "darkgreen",
-                    fontWeight: 900,
-                    width: "226px",
-                    height: "36px",
-                  }
-                : {}
-            }
-            onClick={() =>
-              selectedId === null ? setSelectedId(todo.id) : setSelectedId(null)
-            }
-          >
-            <span>{todo.content}</span>
-          </TodoContentDiv>
-          <TodoCompleteDiv
-            onClick={() => toggleTodo(index)}
-            style={
-              todo.isComplete
-                ? {
-                    border: "3px solid green",
-                    color: "darkgreen",
-                    width: "36px",
-                    height: "36px",
-                    lineHeight: "36px",
-                  }
-                : { color: "gray" }
-            }
-          >
-            <span>✓</span>
-          </TodoCompleteDiv>
-        </TodoSection>
-      ))}
+      <TodosSection>
+        {todos.map((todo, index) => (
+          <TodoSection key={todo.id}>
+            <TodoContentDiv
+              style={
+                selectedId === todo.id
+                  ? {
+                      color: "darkgreen",
+                      border: "1px solid green",
+                      background: "#A0D468",
+                    }
+                  : {}
+              }
+              onClick={() =>
+                selectedId === null
+                  ? setSelectedId(todo.id)
+                  : setSelectedId(null)
+              }
+            >
+              <span>
+                {todo.content.length > 20
+                  ? todo.content.slice(20) + "..."
+                  : todo.content}
+              </span>
+            </TodoContentDiv>
+            <TodoCompleteDiv
+              onClick={() => toggleTodo(index)}
+              style={
+                todo.isComplete
+                  ? {
+                      color: "darkgreen",
+                      border: "1px solid green",
+                      background: "#A0D468",
+                    }
+                  : { color: "gray" }
+              }
+            >
+              <span>✓</span>
+            </TodoCompleteDiv>
+          </TodoSection>
+        ))}
+      </TodosSection>
       {selectedId ? (
         <TodoCommandSection
           onSubmit={() => updateTodo(selectedId - 1, inputValue)}

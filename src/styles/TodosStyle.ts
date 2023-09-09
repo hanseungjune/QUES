@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { media } from "./MediaSettingStyle";
 
 export const Column2 = styled.section`
   display: flex;
@@ -31,6 +32,64 @@ export const TodoTitle = styled.section`
     height: 50px;
     display: block;
   }
+
+  @media ${media.wideDesktop} {
+    & > span {
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    & > img {
+      border: 1px solid black;
+      width: 35px;
+      height: 35px;
+      display: block;
+    }
+  }
+
+  @media ${media.desktop} {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    & > span {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    & > img {
+      border: 1px solid black;
+      width: 30px;
+      height: 30px;
+      display: block;
+    }
+  }
+
+  @media ${media.mobile} {
+    width: 63vw;
+    height: 10vw;
+
+    & > span {
+      margin-left: 25px;
+      font-size: 5vw;
+      font-weight: 700;
+    }
+
+    & > img {
+      margin-right: 25px;
+      width: 10vw;
+      height: 10vw;
+    }
+  }
+`;
+
+export const TodosSection = styled.section`
+  width: 80%;
+  height: 460px;
+  max-height: 460px;
+  overflow-y: auto;
+
+  @media ${media.mobile} {
+    width: 63vw;
+  }
 `;
 
 export const TodoSection = styled.section`
@@ -46,6 +105,20 @@ export const TodoContentDiv = styled.article`
   padding-left: 10px;
   display: flex;
   align-items: center;
+
+  @media ${media.wideDesktop} {
+    width: 180px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+  }
+
+  @media ${media.mobile} {
+    width: 52vw;
+    height: 8vw;
+    font-size: 4vw;
+    line-height: 8vw;
+  }
 `;
 
 export const TodoCompleteDiv = styled.article`
@@ -61,6 +134,20 @@ export const TodoCompleteDiv = styled.article`
   & > span {
     cursor: pointer;
   }
+
+  @media ${media.wideDesktop} {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @media ${media.mobile} {
+    width: 8vw;
+    height: 8vw;
+    font-size: 5vw;
+    line-height: 8vw;
+  }
 `;
 
 export const TodoCommandSection = styled.form`
@@ -70,11 +157,53 @@ export const TodoCommandSection = styled.form`
   bottom: 120px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   & > input {
+    width: 290px;
     height: 40px;
     border: none;
     outline: none;
+    font-size: 16px;
+  }
+
+  @media ${media.wideDesktop} {
+    bottom: 100px;
+
+    & > input {
+      width: 220px;
+      height: 30px;
+      border: none;
+      outline: none;
+    }
+  }
+
+  @media ${media.desktop} {
+    bottom: 100px;
+
+    & > input {
+      width: 190px;
+      height: 30px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+  }
+
+  @media ${media.mobile} {
+    box-shadow: 1px 1px 10px black;
+    width: 100%;
+    bottom: 0px;
+    position: sticky;
+
+    & > input {
+      width: 90%;
+      height: 30px;
+      border: none;
+      outline: none;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
   }
 `;
 
@@ -83,6 +212,7 @@ export const TodoCommandStatusDiv = styled.div`
   justify-content: space-between;
   width: 270px;
   height: 40px;
+  text-align: center;
 
   & > button {
     border: none;
@@ -97,5 +227,36 @@ export const TodoCommandStatusDiv = styled.div`
     font-weight: 700;
     line-height: 40px;
     cursor: pointer;
+  }
+
+  @media ${media.wideDesktop} {
+    width: 220px;
+
+    & > button {
+      font-size: 20px;
+    }
+
+    & > span {
+      font-size: 20px;
+      line-height: 40px;
+    }
+  }
+
+  @media ${media.desktop} {
+    width: 200px;
+
+    & > button {
+      width: 48px;
+      font-size: 16px;
+    }
+
+    & > span {
+      width: 48px;
+      font-size: 16px;
+    }
+  }
+
+  @media ${media.mobile} {
+    width: 90%;
   }
 `;

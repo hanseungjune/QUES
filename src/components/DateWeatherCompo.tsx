@@ -45,7 +45,6 @@ const DateWeatherCompo = () => {
         <img
           src={`https://openweathermap.org/img/wn/${weather.icon}.png`}
           alt="img"
-          style={{ width: "150px", height: "150px" }}
         />
         <WeatherHeader>
           {weather && weather.main

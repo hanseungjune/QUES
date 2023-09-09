@@ -1,4 +1,5 @@
 import { styled, keyframes } from "styled-components";
+import { media } from "./MediaSettingStyle";
 
 export const Column1 = styled.section`
   display: flex;
@@ -16,6 +17,16 @@ export const DateSection = styled.section`
 export const DateHeader = styled.header`
   font-size: 90px;
   font-weight: 700;
+
+  @media ${media.wideDesktop} {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  @media ${media.mobile} {
+    font-size: 19.5vw;
+    margin-right: 10px;
+  }
 `;
 
 export const DateArticle = styled.article`
@@ -26,6 +37,15 @@ export const DateArticle = styled.article`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+
+  @media ${media.wideDesktop} {
+    font-size: 18px;
+  }
+
+  @media ${media.mobile} {
+    font-size: 6.5vw;
+    margin-top: 20px;
+  }
 `;
 
 const shakeAnimation = keyframes`
@@ -47,6 +67,29 @@ export const WeatherSection = styled.section`
 
   & > img {
     animation: ${shakeAnimation} 2s infinite;
+    width: 150px;
+    height: 150px;
+  }
+
+  @media ${media.wideDesktop} {
+    margin-top: 15px;
+    width: 180px;
+    height: 200px;
+
+    & > img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  @media ${media.mobile} {
+    width: 65vw;
+    height: 45vw;
+
+    & > img {
+      width: 20vw;
+      height: 20vw;
+    }
   }
 `;
 
@@ -55,4 +98,12 @@ export const WeatherHeader = styled.h1`
   font-size: 24px;
   font-weight: 700;
   line-height: 35px;
+
+  @media ${media.wideDesktop} {
+    font-size: 16px;
+  }
+
+  @media ${media.mobile} {
+    font-size: 4vw;
+  }
 `;
