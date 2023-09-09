@@ -11,7 +11,6 @@ import {
 } from "../styles/TodosStyle";
 import logo from "../images/logo_ques.png";
 import useTodos from "../hooks/useTodo";
-import { styled } from "styled-components";
 
 const TodosCompo = () => {
   const {

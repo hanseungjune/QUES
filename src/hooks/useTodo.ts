@@ -45,6 +45,7 @@ const useTodos = () => {
   const removeTodo = (id: number) => {
     const removeTodos = todos.filter((todo) => todo.id !== id);
     webStorage.removeTodo(id);
+    setSelectedId(null);
     setTodos(removeTodos);
   };
 
