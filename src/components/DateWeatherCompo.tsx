@@ -7,7 +7,7 @@ import {
   DateSection,
   WeatherHeader,
   WeatherSection,
-} from "../App.style";
+} from "../styles/DateWeatherStyle";
 
 let DayArr = [
   "MONDAY",
@@ -58,7 +58,6 @@ const getLocation = () => {
 const showPosition = (position: any) => {
   lat = position.coords.latitude;
   lon = position.coords.longitude;
-  console.log(lat, lon);
 };
 
 const showError = (error: any) => {

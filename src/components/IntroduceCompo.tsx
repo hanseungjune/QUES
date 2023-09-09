@@ -3,7 +3,7 @@ import {
   FromCompanyArticle,
   MyJobArticle,
   MyNameArticle,
-} from "../App.style";
+} from "../styles/IntroduceStyle";
 
 const IntroduceCompo = () => {
   return (
