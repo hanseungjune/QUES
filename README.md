@@ -320,7 +320,7 @@ export default class WeatherManager {
 }
 ```
 
-## 반응형 디자인 도입 - UX 향상
+## 💥 반응형 디자인 도입 - UX 향상
 
 ```ts
 const sizes = {
