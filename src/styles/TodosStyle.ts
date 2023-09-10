@@ -3,10 +3,27 @@ import { media } from "./MediaSettingStyle";
 
 export const Column2 = styled.section`
   display: flex;
+  width: 350px;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   background-color: #ffdf8c;
+
+  @media ${media.wideDesktop} {
+    width: 270px;
+  }
+
+  @media ${media.desktop} {
+    width: 230px;
+  }
+
+  @media ${media.tablet} {
+    width: 200px;
+  }
+
+  @media ${media.mobile} {
+    width: 70vw;
+  }
 `;
 
 export const TodoTitle = styled.section`
@@ -169,6 +186,7 @@ export const TodoCommandSection = styled.form`
 
   @media ${media.wideDesktop} {
     bottom: 105px;
+    width: 260px;
 
     & > input {
       width: 220px;
@@ -180,9 +198,23 @@ export const TodoCommandSection = styled.form`
 
   @media ${media.desktop} {
     bottom: 100px;
+    width: 200px;
 
     & > input {
-      width: 190px;
+      width: 200px;
+      height: 30px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+  }
+
+  @media ${media.tablet} {
+    bottom: 100px;
+    width: 160px;
+
+    & > input {
+      width: 160px;
       height: 30px;
       border: none;
       outline: none;
@@ -243,7 +275,7 @@ export const TodoCommandStatusDiv = styled.div`
   }
 
   @media ${media.desktop} {
-    width: 200px;
+    width: 220px;
 
     & > button {
       width: 48px;
@@ -256,7 +288,31 @@ export const TodoCommandStatusDiv = styled.div`
     }
   }
 
+  @media ${media.tablet} {
+    width: 180px;
+
+    & > button {
+      width: 36px;
+      font-size: 14px;
+    }
+
+    & > span {
+      width: 36px;
+      font-size: 14px;
+    }
+  }
+
   @media ${media.mobile} {
     width: 90%;
+
+    & > button {
+      width: 48px;
+      font-size: 20px;
+    }
+
+    & > span {
+      width: 48px;
+      font-size:20px;
+    }
   }
 `;
