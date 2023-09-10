@@ -168,7 +168,7 @@ export const TodoCommandSection = styled.form`
   }
 
   @media ${media.wideDesktop} {
-    bottom: 100px;
+    bottom: 105px;
 
     & > input {
       width: 220px;
