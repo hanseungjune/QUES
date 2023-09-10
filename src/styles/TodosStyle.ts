@@ -306,13 +306,13 @@ export const TodoCommandStatusDiv = styled.div`
     width: 90%;
 
     & > button {
-      width: 48px;
-      font-size: 20px;
+      width: 8vw;
+      font-size: 3vw;
     }
 
     & > span {
-      width: 48px;
-      font-size:20px;
+      width: 8vw;
+      font-size: 3vw;
     }
   }
 `;
