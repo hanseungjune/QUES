@@ -7,7 +7,9 @@ const useTodos = () => {
   const webStorage = new WebStorage();
   const [todos, setTodos] = useState<todotype[]>([]);
 
-  const AddTodo = (inputValue: string) => {
+  const AddTodo = (e: React.FormEvent<HTMLFormElement>, inputValue: string) => {
+    e.preventDefault();
+    
     if (inputValue.trim() == "") {
       alert("입력해야만 등록이 됩니다");
       return;
@@ -29,7 +31,9 @@ const useTodos = () => {
     setTodos(toggleTodos);
   };
 
-  const updateTodo = (index: number, updateContent: string) => {
+  const updateTodo = (e: React.FormEvent<HTMLFormElement>, index: number, updateContent: string) => {
+    e.preventDefault();
+    
     if (inputValue.trim() == "") {
       alert("입력해야만 수정이 됩니다");
       return;

@@ -95,7 +95,7 @@ const TodosCompo = () => {
       </TodosSection>
       {selectedId ? (
         <TodoCommandSection
-          onSubmit={() => updateTodo(selectedId - 1, inputValue)}
+          onSubmit={(e) => updateTodo(e, selectedId - 1, inputValue)}
         >
           <TodoCommandStatusDiv>
             <button type="submit">수정</button>
@@ -110,7 +110,7 @@ const TodosCompo = () => {
           />
         </TodoCommandSection>
       ) : (
-        <TodoCommandSection onSubmit={() => AddTodo(inputValue)}>
+        <TodoCommandSection onSubmit={(e) => AddTodo(e, inputValue)}>
           <TodoCommandStatusDiv>
             <button type="submit">추가</button>
           </TodoCommandStatusDiv>
